@@ -1,0 +1,28 @@
+<div class="container" style="margin-top: 10rem">
+  <div class="grid-table">
+    <div class="thead">
+      <div class="tr">
+        <div class="td">Initiative Name</div>
+        <div class="td">Description:</div>
+		<div class="td">InCharge:</div>
+		<div class="td">Actions</div>
+      </div>
+	</div>
+	<div class="tbody">
+		<form class="tr" [formGroup]="fg" *ngFor="let fg of initiativeForms.controls">
+			<div class="td">
+				<input class="form-control" formControlName="initiativeName">
+			</div>
+			<div class="td">
+				<input class="form-control" formControlName="description">
+			</div>
+			<div class="td">
+				<input class="form-control" formControlName="inCharge">
+			</div>
+			<div class="td">
+				<button type="submit" class="btn btn-success" [disabled]="fg.invalid"><i class="far fa-save fa-lg"></i>Submit</button>
+			</div>
+		</form>
+	</div>
+  </div>
+</div>
